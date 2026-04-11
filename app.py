@@ -75,7 +75,7 @@ def entrada(id):
 @app.route("/saida/<int:id>")
 def saida(id):
     if not session.get("logado"):
-        return redirect("/login")
+        return render_template("login.html")
     conn = conectar()
     cursor = conn.cursor()
     cursor.execute("UPDATE produtos SET quantidade = quantidade - 1 WHERE id = ?", (id,))
