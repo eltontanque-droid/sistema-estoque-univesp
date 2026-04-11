@@ -92,3 +92,8 @@ if __name__ == "__main__":
 def service_worker():
     return send_from_directory('.', 'sw.js')
 
+from flask import send_file
+
+@app.route('/sw.js')
+def sw():
+    return send_file('sw.js')
