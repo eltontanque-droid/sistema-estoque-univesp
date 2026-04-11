@@ -85,3 +85,10 @@ def saida(id):
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)
+
+    from flask import send_from_directory
+
+@app.route('/sw.js')
+def service_worker():
+    return send_from_directory('.', 'sw.js')
+
