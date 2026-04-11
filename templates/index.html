@@ -2,15 +2,19 @@
 <html>
 <head>
     <link rel="stylesheet" href="/static/style.css">
-     <link rel="manifest" href="/static/manifest.json">
+    <link rel="manifest" href="/static/manifest.json">
     <meta name="theme-color" content="#4CAF50">
 </head>
+
 <body>
 
 <h1>Sistema de Estoque</h1>
 
 <a href="/produtos">Ver Produtos</a><br><br>
-<a href="/add">Adicionar Produto</a>
+<a href="/add">Adicionar Produto</a><br><br>
+
+<a href="/logout">Sair</a>
+
 <script>
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('/static/sw.js')
@@ -21,8 +25,4 @@ if ('serviceWorker' in navigator) {
 </script>
 
 </body>
-
-<br><br>
-<a href="/logout">Sair</a>
-
-<link rel="manifest" href="/static/manifest.json">
+</html>
