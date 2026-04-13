@@ -12,7 +12,7 @@ def conectar():
 @app.route("/")
 def index():
     if not session.get("logado"):
-        return render_template("login.html")
+        return redirect("/login")
     return render_template("index.html")
 
 
