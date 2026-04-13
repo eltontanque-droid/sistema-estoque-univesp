@@ -86,27 +86,8 @@ def saida(id):
     return redirect("/produtos")
 
 from flask import send_file
-
-@app.route('/sw.js')
-def sw():
-    return send_file('sw.js', mimetype='application/javascript')
-
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=True)
-
-    from flask import send_from_directory
-
-@app.route('/sw.js')
-def sw():
-    return send_from_directory('.', 'sw.js', mimetype='application/javascript')
-
 from flask import send_file
 
 @app.route('/sw.js')
 def sw():
-    return send_file('sw.js')
-
-@app.route('/sw.js')
-def sw():
     return send_file('sw.js', mimetype='application/javascript')
-
