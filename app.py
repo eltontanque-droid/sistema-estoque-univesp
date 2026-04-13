@@ -92,3 +92,7 @@ from flask import send_file
 def sw():
     caminho = os.path.join(os.getcwd(), 'sw.js')
     return send_file(caminho, mimetype='application/javascript')
+
+@app.route("/home")
+def home():
+    return render_template("index.html")

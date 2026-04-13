@@ -1,7 +1,7 @@
 {
   "name": "Estoque App FINAL",
   "short_name": "Estoque",
-  "start_url": "/",
+  "start_url": "/home",
   "scope": "/",
   "display": "standalone",
   "background_color": "#ffffff",
