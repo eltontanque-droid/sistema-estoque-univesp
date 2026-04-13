@@ -85,9 +85,10 @@ def saida(id):
     conn.close()
     return redirect("/produtos")
 
-from flask import send_file
+import os
 from flask import send_file
 
 @app.route('/sw.js')
 def sw():
-    return send_file('sw.js', mimetype='application/javascript')
+    caminho = os.path.join(os.getcwd(), 'sw.js')
+    return send_file(caminho, mimetype='application/javascript')
