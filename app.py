@@ -1,6 +1,8 @@
 from flask import Flask, render_template, request, redirect, session
 import sqlite3
 
+from flask import send_file
+
 app = Flask(__name__)
 app.secret_key = "123456"
 
@@ -83,17 +85,28 @@ def saida(id):
     conn.close()
     return redirect("/produtos")
 
+from flask import send_file
+
+@app.route('/sw.js')
+def sw():
+    return send_file('sw.js', mimetype='application/javascript')
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)
 
     from flask import send_from_directory
 
 @app.route('/sw.js')
-def service_worker():
-    return send_from_directory('.', 'sw.js')
+def sw():
+    return send_from_directory('.', 'sw.js', mimetype='application/javascript')
 
 from flask import send_file
 
 @app.route('/sw.js')
 def sw():
     return send_file('sw.js')
+
+@app.route('/sw.js')
+def sw():
+    return send_file('sw.js', mimetype='application/javascript')
+
