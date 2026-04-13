@@ -6,14 +6,13 @@ from flask import send_file
 app = Flask(__name__)
 app.secret_key = "123456"
 
-
 def conectar():
     return sqlite3.connect("estoque.db")
 
 @app.route("/")
 def index():
     if not session.get("logado"):
-        return redirect("/login")
+        return render_template("login.html")
     return render_template("index.html")
 
 @app.route("/login", methods=["GET", "POST"])
